@@ -1,0 +1,14 @@
+---
+platform: linux
+
+image_resource:
+  type: docker-image
+  source: { repository: ruby, tag: '2.4-onbuild' }
+
+inputs:
+  - name: sourcecode
+  - name: api-contracts
+
+run:
+  path: ./concourse_api_contract_tests.sh
+  dir: sourcecode
